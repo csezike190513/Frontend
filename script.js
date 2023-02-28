@@ -99,22 +99,22 @@ function makeGuess(letter) {
   } else {
     incorrectGuesses.add(letter);
     if(incorrectGuesses.size ===1){
-      document.getElementById("kep").src = "kép/akasztofa2.png";
+      document.getElementById("kep").src = "kep/akasztofa2.png";
 	  }
     if(incorrectGuesses.size ===2){
-      document.getElementById("kep").src = "kép/akasztofa3.png";
+      document.getElementById("kep").src = "kep/akasztofa3.png";
 	  }
     if(incorrectGuesses.size ===3){
-      document.getElementById("kep").src = "kép/akasztofa4.png";
+      document.getElementById("kep").src = "kep/akasztofa4.png";
 	  }
     if(incorrectGuesses.size ===4){
-      document.getElementById("kep").src = "kép/akasztofa5.png";
+      document.getElementById("kep").src = "kep/akasztofa5.png";
 	  }
     if(incorrectGuesses.size ===5){
-      document.getElementById("kep").src = "kép/akasztofa6.png";
+      document.getElementById("kep").src = "kep/akasztofa6.png";
 	  }
     if(incorrectGuesses.size ===6){
-      document.getElementById("kep").src = "kép/akasztofa7.png";
+      document.getElementById("kep").src = "kep/akasztofa7.png";
 	  }
   }
   updateWord();
