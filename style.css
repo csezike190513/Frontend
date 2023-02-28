@@ -1,0 +1,113 @@
+body {
+  background-color: #0d5c71;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+img{
+  height: 130px;
+  margin-right: 500px;
+  margin-top: 90px;
+}
+
+#title-bar
+{
+	height: 150px;
+	margin-top: -60px;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+	#title-bar > div
+	{
+		height: 150px;
+		border-radius: 50%;
+		background: rgb(101, 172, 194);
+    text-align: center;
+    justify-content: center;
+	}
+		h1
+		{
+			margin: 0;
+			color: #000110;
+			font-size: 150%;
+			font-family: "high";
+			text-align: center;
+			padding-top: 75px;
+		}
+.win{
+  color: #055344;
+  margin-top: 0 ;
+  font-size: 30px;
+}
+.lose{
+  color: #530505;
+  margin-top: 0 ;
+  font-size: 30px;
+}
+
+button
+		{
+			border-radius: 50px;
+			background: rgb(19, 145, 80);
+			border: 0;
+			padding: 10px;
+      justify-content: right;
+      margin-left: 1350px;
+			box-sizing: border-box;
+			font-size: 105%;
+			text-transform: uppercase;
+			font-family: "high";
+			font-weight: lighter;
+			color: #fff;
+			width: 100%;
+			outline: 0;
+			cursor: pointer;
+			max-width: 120px;
+		}
+		button:hover
+		{
+			background: rgb(0, 132, 119);
+      transition: 2ms;
+		}
+		button:active
+		{
+			background: rgb(0, 52, 23);
+		}
+
+#word {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 60px;
+}
+
+#guesses {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+#keyboard {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.key {
+  display: inline-block;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 24px;
+  background-color: #022d39;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.key:hover {
+  background-color: #055344;
+}
