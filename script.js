@@ -115,9 +115,6 @@ function makeGuess(letter) {
     if(incorrectGuesses.size ===5){
       document.getElementById("kep").src = "kep/akasztofa6.png";
 	  }
-    if(incorrectGuesses.size ===6){
-      document.getElementById("kep").src = "kep/akasztofa7.png";
-	  }
   }
   updateWord();
   updateGuesses();
@@ -130,10 +127,12 @@ function checkWin() {
     
     const win = document.getElementById("word");
     win.innerHTML  = `<h2 class="win">You Win!</br>The word was: `+word+`.</h2>`;
+    document.getElementById("kep").src = "kep/akasztofaWIN.png";
     wordElement.appendChild(win);
   } else if (incorrectGuesses.size === 6) {
     const lose = document.getElementById("word");
     lose.innerHTML = `<h2 class="lose">Game Over!</br>The word was: `+word+`. </br>Try again!</h2>`;
+    document.getElementById("kep").src = "kep/akasztofaLOSE.png";
     wordElement.appendChild(lose);
     }
     
