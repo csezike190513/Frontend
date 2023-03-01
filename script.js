@@ -84,7 +84,7 @@ function checkWin() {
   if ([...word].every(letter => correctGuesses.has(letter))) {
     
     const win = document.getElementById("word");
-    win.innerHTML  = `<h2 class="win">You Win!</br>The word was: `+word+`.</h2>`;
+    win.innerHTML  = `<h2 class="win">You Win!</br>The word was: `+word+`.</br>Congratulation!</h2>`;
     document.getElementById("kep").src = "kep/akasztofaWIN.png";
     wordElement.appendChild(win);
   } else if (incorrectGuesses.size === 6) {
