@@ -1,3 +1,5 @@
+
+
 // array of words
 const words = [
   "legacy"
@@ -54,7 +56,7 @@ const words = [
 
 
 // choose a random word
-let word = words[Math.floor(Math.random() * words.length)];
+let word =words[Math.floor(Math.random() * words.length)];
 //word = toUppercase(word);
 
 // array to hold correct guesses
@@ -127,11 +129,11 @@ function checkWin() {
   if ([...word].every(letter => correctGuesses.has(letter))) {
     
     const win = document.getElementById("word");
-    win.innerHTML  = `<h1 class="win">You Win!</br>The word was: `+word+`.</h1>`;
+    win.innerHTML  = `<h2 class="win">You Win!</br>The word was: `+word+`.</h2>`;
     wordElement.appendChild(win);
   } else if (incorrectGuesses.size === 6) {
     const lose = document.getElementById("word");
-    lose.innerHTML = `<h1 class="lose">Game Over!</br>The word was: `+word+`. </br>Try again!</h1>`;
+    lose.innerHTML = `<h2 class="lose">Game Over!</br>The word was: `+word+`. </br>Try again!</h2>`;
     wordElement.appendChild(lose);
     }
     
