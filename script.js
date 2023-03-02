@@ -29,7 +29,9 @@ for (let i = 97; i <= 122; i++) {
   const key = document.createElement("div");
   key.classList.add("key");
   key.textContent = String.fromCharCode(i);
-  key.addEventListener("click", () => makeGuess(String.fromCharCode(i)));
+  if(correctGuesses.has(key) == false || incorrectGuesses.has(key) == false){
+    key.addEventListener("click", () => makeGuess(String.fromCharCode(i)));
+  }
   keyboard.appendChild(key);
 }
 
