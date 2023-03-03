@@ -26,13 +26,12 @@ const incorrectGuesses = new Set();
 // add keyboard to page
 const keyboard = document.getElementById("keyboard");
 for (let i = 97; i <= 122; i++) {
-  const key = document.createElement("div");
-  key.classList.add("key");
-  key.textContent = String.fromCharCode(i);
-  if(correctGuesses.has(key) == false || incorrectGuesses.has(key) == false){
-    key.addEventListener("click", () => makeGuess(String.fromCharCode(i)));
-  }
-  keyboard.appendChild(key);
+    const key = document.createElement("div");
+    key.classList.add("key");
+    key.id = ("key_"+String(i));
+    key.textContent = String.fromCharCode(i);
+    key.addEventListener("click", () => makeGuess(String.fromCharCode(i),i));
+    keyboard.appendChild(key);
 }
 
   
@@ -55,11 +54,17 @@ function updateGuesses() {
 }
 
 // function to make a guess
-function makeGuess(letter) {
+function makeGuess(letter,i) {
   if (word.includes(letter)) {
     correctGuesses.add(letter);
+    let keyletter = document.getElementById("key_"+String(i));
+    keyletter.removeEventListener("click", null);
+    keyletter.id= "hasznaltkey"
   } else {
     incorrectGuesses.add(letter);
+    let keyletter = document.getElementById("key_"+String(i));
+    keyletter.removeEventListener("click", null);
+    keyletter.id= "hasznaltkey"
     if(incorrectGuesses.size ===1){
       document.getElementById("kep").src = "kep/akasztofa2.png";
 	  }

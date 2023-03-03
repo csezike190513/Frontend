@@ -159,6 +159,12 @@ button
   background-size:50px 350px ; 
   box-shadow:3px 3px 5px  #01221541;
 }
+#hasznaltkey{
+  background: -webkit-linear-gradient(180deg,#00120b,#262726 );  
+  background: -moz-linear-gradient(180deg,#00120b,#262726 );  
+  background: -o-linear-gradient(180deg,#00120b,#262726 ); 
+  background: linear-gradient(180deg,#00120b,#262726 ); 
+}
 
 .key:hover
 {
