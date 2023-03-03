@@ -164,6 +164,7 @@ button
   background: -moz-linear-gradient(180deg,#00120b,#262726 );  
   background: -o-linear-gradient(180deg,#00120b,#262726 ); 
   background: linear-gradient(180deg,#00120b,#262726 ); 
+  opacity: 80%;
 }
 
 .key:hover
