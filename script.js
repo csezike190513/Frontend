@@ -59,12 +59,12 @@ function makeGuess(letter,i) {
     correctGuesses.add(letter);
     let keyletter = document.getElementById("key_"+String(i));
     keyletter.removeEventListener("click", null);
-    keyletter.id= "hasznaltkey"
+    keyletter.id= "hasznaltkey";
   } else {
     incorrectGuesses.add(letter);
     let keyletter = document.getElementById("key_"+String(i));
     keyletter.removeEventListener("click", null);
-    keyletter.id= "hasznaltkey"
+    keyletter.id= "hasznaltkey";
     if(incorrectGuesses.size ===1){
       document.getElementById("kep").src = "kep/akasztofa2.png";
 	  }
@@ -86,6 +86,20 @@ function makeGuess(letter,i) {
   checkWin();
 }
 
+function removeClickListenersAndSetClass() {
+  // get all div elements whose id starts with "key_"
+  const keyDivs = document.querySelectorAll('div[id^="key_"]');
+
+  // loop through each keyDiv element
+  keyDivs.forEach((keyDiv) => {
+    // remove the click event listener
+    keyDiv.removeEventListener('click', null);
+
+    // set the class to "hasznaltkey"
+    keyDiv.id = ("hasznaltkey");
+  });
+}
+
 // function to check for a win
 function checkWin() {
   if ([...word].every(letter => correctGuesses.has(letter))) {
@@ -93,15 +107,18 @@ function checkWin() {
     const win = document.getElementById("word");
     win.innerHTML  = `<h2 class="win">You Win!</br>The word was: `+word+`.</br>Congratulation!</h2>`;
     document.getElementById("kep").src = "kep/akasztofaWIN.png";
-    wordElement.appendChild(win);
-  } else if (incorrectGuesses.size === 6) {
-    const lose = document.getElementById("word");
-    lose.innerHTML = `<h2 class="lose">Game Over!</br>The word was: `+word+`. </br>Try again!</h2>`;
-    document.getElementById("kep").src = "kep/akasztofaLOSE.png";
-    wordElement.appendChild(lose);
+    wordElement = win;
+    removeClickListenersAndSetClass();//document.getElementById(startsWith("key_")).removeEventListener("click", null).id= "hasznaltkey";
     }
-    
-    }
+    else if (incorrectGuesses.size === 6) {
+      const lose = document.getElementById("word");
+      lose.innerHTML = `<h2 class="lose">Game Over!</br>The word was: `+word+`. </br>Try again!</h2>`;
+      document.getElementById("kep").src = "kep/akasztofaLOSE.png";
+      wordElement = lose;
+      removeClickListenersAndSetClass();//document.getElementById(startsWith("key_")).removeEventListener("click", null).id= "hasznaltkey";
+  }
+}
+  
     
     
     // update the word and guesses on page load
