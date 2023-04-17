@@ -4,13 +4,17 @@ const correctGuesses = new Set();
 // array to hold incorrect guesses
 const incorrectGuesses = new Set();
 
+// update the word and guesses on page load
+UpdateGuesses.updateGuesses();
+UpdateWord.updateWord(correctGuesses);
+let word = UpdateWord.returnWord();
+
+
 //billentyűzet helye
 const keyboards = document.getElementById("keyboard");
 Keyboard.KeyBoardAdd(keyboards);
 
-MakeGuess.makeGuess(incorrectGuesses);
-removes.removeClickListenersAndSetClass();
 
-// update the word and guesses on page load
-UpdateWord.updateWord(correctGuesses);
-UpdateGuesses.updateGuesses();
+MakeGuess.makeGuess(incorrectGuesses,word);
+Remove.removeClickListenersAndSetClass();
+

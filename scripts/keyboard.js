@@ -10,7 +10,7 @@ const Keyboard = (function()
             key.classList.add("key");
             key.id = ("key_"+String(i));
             key.textContent = String.fromCharCode(i);
-            key.addEventListener("click", () => makeGuess(String.fromCharCode(i),i));
+            key.addEventListener("click", () => MakeGuess.makeGuess(String.fromCharCode(i),i));
             keyboard.appendChild(key);
         }
     }
