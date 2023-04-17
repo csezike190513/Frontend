@@ -1,5 +1,11 @@
+const MakeGuess = (function()
+{
+    
+    var self = 
+    {
+
 // function to make a guess
-function makeGuess(letter,i) {
+makeGuess: function(letter,i) {
     if (word.includes(letter)) {
       correctGuesses.add(letter);
       let keyletter = document.getElementById("key_"+String(i));
@@ -26,7 +32,12 @@ function makeGuess(letter,i) {
         document.getElementById("kep").src = "kep/akasztofa6.png";
         }
     }
-    updateWord();
-    updateGuesses();
-    checkWin();
+    UpdateWord.updateWord();
+    UpdateGuesses.updateGuesses();
+    Win.checkWin();
   }
+  };
+
+  return self;
+
+})();

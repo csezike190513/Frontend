@@ -1,5 +1,12 @@
+const Win = (function()
+{
+    var secret, remain, last;
+
+    var self = 
+    {
+
 // function to check for a win
-function checkWin() {
+checkWin: function() {
     if ([...word].every(letter => correctGuesses.has(letter))) {
       
       const win = document.getElementById("word");
@@ -13,6 +20,11 @@ function checkWin() {
         lose.innerHTML = `<h2 class="lose">Game Over!</br>The word was: `+word+`. </br>Try again!</h2>`;
         document.getElementById("kep").src = "kep/akasztofaLOSE.png";
         wordElement = lose;
-        removeClickListenersAndSetClass();//document.getElementById(startsWith("key_")).removeEventListener("click", null).id= "hasznaltkey";
+        Remove.removeClickListenersAndSetClass();//document.getElementById(startsWith("key_")).removeEventListener("click", null).id= "hasznaltkey";
     }
   }
+};
+
+return self;
+
+})();

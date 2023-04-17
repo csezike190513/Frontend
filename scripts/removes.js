@@ -1,4 +1,11 @@
-function removeClickListenersAndSetClass() {
+const Remove = (function()
+{
+    var secret, remain, last;
+
+    var self = 
+    {
+
+removeClickListenersAndSetClass: function() {
     // get all div elements whose id starts with "key_"
     const keyDivs = document.querySelectorAll('div[id^="key_"]');
   
@@ -11,3 +18,8 @@ function removeClickListenersAndSetClass() {
       keyDiv.id = ("hasznaltkey");
     });
   }
+  };
+
+  return self;
+
+})();
