@@ -1,4 +1,4 @@
-
+/*
 
 // array of words
 const words = [
@@ -123,4 +123,4 @@ function checkWin() {
     
     // update the word and guesses on page load
     updateWord();
-    updateGuesses();
+    updateGuesses();*/
