@@ -48,24 +48,32 @@ const Wordthings= (function()
 
         // function to make a guess
         makeGuess: function(letter,i) {
-            const keyletter = document.getElementById("key_"+String(i));
+            let keyletter = document.getElementById("hasznaltkey");
+            if(document.getElementById("key_"+String(i)) !== null){
+                keyletter = document.getElementById("key_"+String(i));
+            }else{
+                keyletter.id= ("hasznaltkey");
+            }
+            //keyletter = document.getElementById("key_"+String(i));
 
-            if ((word.includes(letter)) && (keyletter !=("hasznaltkey"))) {
+            if ((word.includes(letter)) && (keyletter !==("hasznaltkey"))) {
                 correctGuesses.add(letter);
                 console.log("correctGuesses+1");
-                keyletter.removeEventListener("click",null);
-                keyletter.id= "hasznaltkey";
+                keyletter.id= ("hasznaltkey");
+                keyletter.removeEventListener("click",() => Wordthings.makeGuess(String.fromCharCode(i),i));
+                
             } else  {
-                if(keyletter != ("hasznaltkey")){
+                if(keyletter !== ("hasznaltkey")){
                     incorrectGuesses.add(letter);
                     console.log("incorrectGuesses+1");
-                    keyletter.removeEventListener("click",null);
+                    keyletter.id= ("hasznaltkey");
+                    keyletter.removeEventListener("click",() => Wordthings.makeGuess(String.fromCharCode(i),i));
                     console.log("itt is bemegy?");
-                    keyletter.id= "hasznaltkey";
+                    
                 }else{
                     incorrectGuesses.add(letter);
                     console.log("incorrectGuesses+1");
-                    keyletter.removeClickListenersAndSetClass("click",null);
+                    keyletter.removeClickListenersAndSetClass("click",() => Wordthings.makeGuess(String.fromCharCode(i),i));
                     //console.log("itt is bemegy?");
                 }
                 if(incorrectGuesses.size ===1){
