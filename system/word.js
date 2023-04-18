@@ -49,14 +49,14 @@ const Wordthings= (function()
         // function to make a guess
         makeGuess: function(letter,i) {
             const keyletter = document.getElementById("key_"+String(i));
-            let keyletterid= keyletter.id;
-            if ((word.includes(letter)) && (keyletterid !=("hasznaltkey"))) {
+
+            if ((word.includes(letter)) && (keyletter !=("hasznaltkey"))) {
                 correctGuesses.add(letter);
                 console.log("correctGuesses+1");
                 keyletter.removeEventListener("click",null);
                 keyletter.id= "hasznaltkey";
             } else  {
-                if(keyletterid != ("hasznaltkey")){
+                if(keyletter != ("hasznaltkey")){
                     incorrectGuesses.add(letter);
                     console.log("incorrectGuesses+1");
                     keyletter.removeEventListener("click",null);
