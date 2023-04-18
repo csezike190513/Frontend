@@ -1,7 +1,5 @@
 const Remove = (function()
 {
-    var secret, remain, last;
-
     var self = 
     {
 
@@ -11,11 +9,15 @@ removeClickListenersAndSetClass: function() {
   
     // loop through each keyDiv element
     keyDivs.forEach((keyDiv) => {
-      // remove the click event listener
-      keyDiv.removeEventListener('click', null);
-  
-      // set the class to "hasznaltkey"
-      keyDiv.id = ("hasznaltkey");
+      let keyletterid= keyDiv.id;
+      if(keyletterid!= ("hasznaltkey")){
+        // remove the click event listener
+        keyDiv.removeEventListener('click', null);
+    
+        // set the class to "hasznaltkey"
+        keyletterid = ("hasznaltkey");
+      }
+      
     });
   }
   };
